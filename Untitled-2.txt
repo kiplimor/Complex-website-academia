@@ -1,0 +1,1070 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+
+
+
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Homepage</title>
+    <meta name="description" content="" />
+    <!--Keywords -->
+    <meta name="keywords" content="" />
+    <meta name="author" content="Kev Localsavvy" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1" />
+    <!--Favicon -->
+	<link rel="icon" type="image/png" href="images/favicon.png" />
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png"/>
+
+	<!-- CSS Files -->
+	<link rel="stylesheet" href="css/plugins73177317.css?v=2.3.1"/>
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="css/theme73177317.css?v=2.3.1"/>
+	<!-- Page Styles -->
+	<link rel="stylesheet" href="content/unfold/css/unfold.css" />
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/custom.css" />
+	<!-- End Page Styles -->
+
+	<script>
+	
+		function doUpdatePrices(){
+			var subject = document.getElementById('subject').value;
+			var numpages = parseInt(document.getElementById('pages').value);
+			var pptype = document.getElementById('doctype').value;
+			var urgency = document.getElementById('deadline').value;
+			var aclevel = document.getElementById('acadlevel').value;
+			
+			var docty = document.getElementById('doctype').options[document.getElementById('doctype').selectedIndex].value;
+			var subja = document.getElementById('subject').options[document.getElementById('subject').selectedIndex].value;
+			$.ajax({
+			type: "POST",
+			url: "calculate.php",
+			data: 'subj='+subject +' && doct='+pptype +' && pages='+numpages +' && deadline=' + urgency + ' && acadlevel='+aclevel + ' && sindex='+docty + ' && subja='+subja + ' && topw=0' + ' && vip=0',
+			cache:false,
+			success: function(html){
+			document.getElementById('final-amount').innerHTML = '$'+' ' +html;
+			document.getElementById('final-amount2').value = html;
+			//alert(html);
+			//alert(subja);
+			}
+			});
+			}
+		</script>
+		<style>
+		select {
+			color: #04fd0b;
+		}
+		</style>
+
+
+</head>
+
+<!-- BODY START -->
+<body>
+
+
+    <!-- LOADER -->
+    <div class="page-loader bg-white">
+        <div class="loader-signal">
+            <div class="loader__figure border-colored"></div>
+        </div>
+    </div>
+
+
+
+    <!-- ALL SECTIONS -->
+    <section class="bg-white">
+
+
+        <!-- NAVIGATION - Select nav color and offset -->
+        <nav id="navigation" class="white-nav shrink hide-by-scroll modern hover4 hover radius-drop" data-offset="0">
+
+            <!-- Columns -->
+            <div class="columns clearfix container-xl m-auto">
+                <!-- Logo -->
+                <div class="logo" style="margin-left: 35px;">
+                    <a href="#pagetop">
+                        <img src="content/unfold/images/logo_01.png" data-second-logo="content/unfold/images/logo_02.png" alt="Quadra Logo">
+                    </a>
+                </div>
+                <!-- Right Elements; Nav Button, Language Button, Search .etc -->
+                <div class="nav-elements">
+                    <ul class="clearfix nav no-ls normal">
+										<!-- Item With Dropdown -->
+                  <li class="dropdown-toggle"><a href="#" class="flag-item"><img src="images/flag-usa.png" alt=""> <span>En</span></a>
+                      
+                  </li>
+				  
+										<li> <a href="order.html" target="_blank" class="external-btn bg-colored underline-hover white radius font-12 bold bs-hover click-effect nav-link"> MAKE ORDER </a> </li>
+                    </ul>
+                </div>
+                <!-- End Navigation Elements -->
+                <!-- Navigation Menu -->
+                <div class="nav-menu">
+                    <ul class="nav clearfix uppercase">
+                        <li><a href="index-2.html">Home</a></li>
+                    <li><a href="about.html">About Us</a> </li>
+                    <li><a href="faqs.html">FAQs</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    
+                    
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="order.html">Make Order</a></li>
+					<li><a href="contact.html">Contact Us</a></li>
+											
+					<li class="dropdown-toggle"><a href="#" class="stay">Login</a>
+                        <ul class="dropdown-menu to-right">
+							<li><a href="login.html">Login</a></li>
+							<li><a href="register.html">Register</a></li>
+                        </ul>
+                    </li>
+					                    </ul>
+                </div>
+                <!-- End Navigation Menu -->
+            </div>
+            <!-- End Columns -->
+        </nav>        <!-- END NAVIGATION -->
+
+
+        <!-- Icon Navigation / you can edit color, background, font-size .etc styles with classes -->
+        <div class="icon-navigation hidden-sm hidden-xs nav-menu bg-gradient fs-17 white radius bs-lg skrollr" data-0="top:22%; left:5%; transform:translate3d(0px, 0px, 0px);" data-end="transform:translate3d(0px, 100px, 0px);">
+            <ul class="nav">
+                <li data-toggle="popover" data-trigger="hover" title="Home" data-placement="right">
+                    <a href="#home" class="fa fa-home click-effect"></a>
+                </li>
+                <li data-toggle="popover" data-trigger="hover" title="About Us" data-placement="right">
+                    <a href="#about" class="fa fa-newspaper-o click-effect"></a>
+                </li>
+                <li data-toggle="popover" data-trigger="hover" title="Our Works" data-placement="right">
+                    <a href="#works" class="fa fa-film click-effect"></a>
+                </li>
+                <li data-toggle="popover" data-trigger="hover" title="Log In" data-placement="right">
+                    <a href="login-2.html" class="fa fa-lock click-effect"></a>
+                </li>
+                <li data-toggle="popover" data-trigger="hover" title="Our Faqs" data-placement="right">
+                    <a href="faqs.html" class="qfm-trigger fa fa-eye click-effect"></a>
+                </li>
+                <li data-toggle="popover" data-trigger="hover" title="Ask a Question" data-placement="right">
+                    <a href="#" onClick="return false;" class="fa fa-envelope quick-contact-form-trigger click-effect"></a>
+                </li>
+                <li data-toggle="popover" data-trigger="hover" title="Make Order" data-placement="right">
+                    <a href="order.html" class="fa fa-cart-plus click-effect"></a>
+                </li>
+            </ul>
+        </div>
+        <!-- End Icon Navigation -->
+
+
+
+
+
+        <!-- HOME -->
+        <section id="home" class="home bg-soft bg-soft-gradient bg-cover relative" data-background="content/unfold/images/undraw_road_to_knowledge_m8s0.svg">
+            <!-- Container for home elements -->
+            <div class="container white t-center">
+			<!-- Title -->
+                <h5 class="uppercase bold white no-pm">Quick Quote Form</h5><br>
+                <center>
+                <form  name="contact_form" class="home-contact" method="get" action="https://morielessays.com/makeorder.php">
+                    <!-- Half Inputs -->
+                    <div class="half clearfix">
+                        <!-- subject -->
+						<span class="gray8 colored-hover" data-toggle="tooltip" data-trigger="hover" data-placement="top"
+                        title="Select Subject"><select name="subject" id="subject" required class="classic_form radius"  onchange="doUpdatePrices();return false">
+						            <option value = "1"  >
+                Architecture            </option>
+                        <option value = "2"  >
+                Dance            </option>
+                        <option value = "3"  >
+                Design Analysis            </option>
+                        <option value = "4"  >
+                Drama            </option>
+                        <option value = "5"  >
+                Movies            </option>
+                        <option value = "6"  >
+                Music            </option>
+                        <option value = "7"  >
+                Paintings            </option>
+                        <option value = "8"  >
+                Theatre            </option>
+                        <option value = "9"  >
+                Biology            </option>
+                        <option value = "10" selected >
+                Business            </option>
+                        <option value = "11"  >
+                Chemistry            </option>
+                        <option value = "12"  >
+                Communications and Media            </option>
+                        <option value = "13"  >
+                Advertising            </option>
+                        <option value = "14"  >
+                Communication Strategies            </option>
+                        <option value = "15"  >
+                Journalism            </option>
+                        <option value = "16"  >
+                Public Relations            </option>
+                        <option value = "17"  >
+                Creative writing            </option>
+                        <option value = "18"  >
+                Economics            </option>
+                        <option value = "19"  >
+                Accounting            </option>
+                        <option value = "20"  >
+                Case Study            </option>
+                        <option value = "21"  >
+                Company Analysis            </option>
+                        <option value = "22"  >
+                E-Commerce            </option>
+                        <option value = "23"  >
+                Finance            </option>
+                        <option value = "24"  >
+                Investment            </option>
+                        <option value = "25"  >
+                Logistics            </option>
+                        <option value = "26"  >
+                Trade            </option>
+                        <option value = "27"  >
+                Education            </option>
+                        <option value = "28"  >
+                Application Essay            </option>
+                        <option value = "29"  >
+                Education Theories            </option>
+                        <option value = "30"  >
+                Pedagogy            </option>
+                        <option value = "31"  >
+                Teacher's Career            </option>
+                        <option value = "32"  >
+                Engineering            </option>
+                        <option value = "33"  >
+                English            </option>
+                        <option value = "34"  >
+                Ethics            </option>
+                        <option value = "35"  >
+                History            </option>
+                        <option value = "36"  >
+                African-American Studies            </option>
+                        <option value = "37"  >
+                American History            </option>
+                        <option value = "38"  >
+                Asian Studies            </option>
+                        <option value = "39"  >
+                Canadian Studies            </option>
+                        <option value = "40"  >
+                East European Studies            </option>
+                        <option value = "41"  >
+                Holocaust            </option>
+                        <option value = "42"  >
+                Latin-American Studies            </option>
+                        <option value = "43"  >
+                Native-American Studies            </option>
+                        <option value = "44"  >
+                West European Studies            </option>
+                        <option value = "45"  >
+                Law            </option>
+                        <option value = "46"  >
+                Criminology            </option>
+                        <option value = "47"  >
+                Legal Issues            </option>
+                        <option value = "48"  >
+                Linguistics            </option>
+                        <option value = "49"  >
+                Literature            </option>
+                        <option value = "50"  >
+                American Literature            </option>
+                        <option value = "51"  >
+                Antique Literature            </option>
+                        <option value = "52"  >
+                Asian Literature            </option>
+                        <option value = "53"  >
+                English Literature            </option>
+                        <option value = "54"  >
+                Shakespeare Studies            </option>
+                        <option value = "55"  >
+                Management            </option>
+                        <option value = "56"  >
+                Marketing            </option>
+                        <option value = "57"  >
+                Mathematics            </option>
+                        <option value = "58"  >
+                Medicine and Health            </option>
+                        <option value = "59"  >
+                Alternative Medicine            </option>
+                        <option value = "60"  >
+                Healthcare            </option>
+                        <option value = "61"  >
+                Nursing            </option>
+                        <option value = "62"  >
+                Nutrition            </option>
+                        <option value = "63"  >
+                Pharmacology            </option>
+                        <option value = "64"  >
+                Sport            </option>
+                        <option value = "65"  >
+                Nature            </option>
+                        <option value = "66"  >
+                Agricultural Studies            </option>
+                        <option value = "67"  >
+                Anthropology            </option>
+                        <option value = "68"  >
+                Astronomy            </option>
+                        <option value = "69"  >
+                Environmental Issues            </option>
+                        <option value = "70"  >
+                Geography            </option>
+                        <option value = "71"  >
+                Geology            </option>
+                        <option value = "72"  >
+                Philosophy            </option>
+                        <option value = "73"  >
+                Physics            </option>
+                        <option value = "74"  >
+                Political Science            </option>
+                        <option value = "75"  >
+                Psychology            </option>
+                        <option value = "76"  >
+                Religion and Theology            </option>
+                        <option value = "77"  >
+                Sociology            </option>
+                        <option value = "78"  >
+                Technology            </option>
+                        <option value = "79"  >
+                Aeronautics            </option>
+                        <option value = "80"  >
+                Aviation            </option>
+                        <option value = "81"  >
+                Computer Science            </option>
+                        <option value = "82"  >
+                Internet            </option>
+                        <option value = "83"  >
+                IT Management            </option>
+                        <option value = "84"  >
+                Web Design            </option>
+                        <option value = "85"  >
+                Tourism            </option>
+            						</select>
+                        </span>
+                        <!-- doctype -->
+                        <span class="gray8 colored-hover slow" data-toggle="tooltip" data-trigger="hover" data-placement="top"
+                        title="Select Document Type"><select name="doctype" id="doctype" required class="classic_form radius"  onchange="doUpdatePrices();return false">
+						            <option value = "1"  >
+                Essay            </option>
+                        <option value = "2"  >
+                Term Paper            </option>
+                        <option value = "3" selected >
+                Research Paper            </option>
+                        <option value = "4"  >
+                Coursework            </option>
+                        <option value = "5"  >
+                Book Report            </option>
+                        <option value = "6"  >
+                Book Review            </option>
+                        <option value = "7"  >
+                Movie Review            </option>
+                        <option value = "8"  >
+                Dissertation            </option>
+                        <option value = "9"  >
+                Thesis            </option>
+                        <option value = "10"  >
+                Thesis Proposal            </option>
+                        <option value = "11"  >
+                Research Proposal            </option>
+                        <option value = "12"  >
+                Dissertation Chapter - Abstract            </option>
+                        <option value = "13"  >
+                Dissertation Chapter - Introduction            </option>
+                        <option value = "14"  >
+                Dissertation Chapter - Literature Review            </option>
+                        <option value = "15"  >
+                Dissertation Chapter - Methodology            </option>
+                        <option value = "16"  >
+                Dissertation Chapter - Results            </option>
+                        <option value = "17"  >
+                Dissertation Chapter - Discussion            </option>
+                        <option value = "18"  >
+                Dissertation Services - Editing            </option>
+                        <option value = "19"  >
+                Dissertation Services - Proofreading            </option>
+                        <option value = "20"  >
+                Formatting            </option>
+                        <option value = "21"  >
+                Admission Services - Admission Essay            </option>
+                        <option value = "22"  >
+                Admission Services - Scholarship Essay            </option>
+                        <option value = "23"  >
+                Admission Services - Personal Statement            </option>
+                        <option value = "24"  >
+                Admission Services - Editing            </option>
+                        <option value = "25"  >
+                Editing            </option>
+                        <option value = "26"  >
+                Proofreading            </option>
+                        <option value = "27"  >
+                Case Study            </option>
+                        <option value = "28"  >
+                Lab Report            </option>
+                        <option value = "29"  >
+                Speech Presentation            </option>
+                        <option value = "30"  >
+                Math Problem            </option>
+                        <option value = "31"  >
+                Article            </option>
+                        <option value = "32"  >
+                Article Critique            </option>
+                        <option value = "33"  >
+                Annotated Bibliography            </option>
+                        <option value = "34"  >
+                Reaction Paper            </option>
+                        <option value = "35"  >
+                PowerPoint Presentation            </option>
+                        <option value = "36"  >
+                Statistics Project            </option>
+                        <option value = "37"  >
+                Multiple Choice Questions            </option>
+                        <option value = "38"  >
+                Other (Not listed)            </option>
+            						</select></span>
+                    </div>
+					<div class="half clearfix">
+                        <!-- pages -->
+                        <span class="gray8 colored-hover slow" data-toggle="tooltip" data-trigger="hover" data-placement="top"
+                        title="Select No.of Pages"><select name="pages" id="pages" required class="classic_form radius"  onchange="doUpdatePrices();return false">
+									<option value = "1"  >
+			1 pages / 275 words			</option>
+						<option value = "2" selected >
+			2 pages / 550 words			</option>
+						<option value = "3"  >
+			3 pages / 825 words			</option>
+						<option value = "4"  >
+			4 pages / 1100 words			</option>
+						<option value = "5"  >
+			5 pages / 1375 words			</option>
+						<option value = "6"  >
+			6 pages / 1650 words			</option>
+						<option value = "7"  >
+			7 pages / 1925 words			</option>
+						<option value = "8"  >
+			8 pages / 2200 words			</option>
+						<option value = "9"  >
+			9 pages / 2475 words			</option>
+						<option value = "10"  >
+			10 pages / 2750 words			</option>
+						<option value = "11"  >
+			11 pages / 3025 words			</option>
+						<option value = "12"  >
+			12 pages / 3300 words			</option>
+						<option value = "13"  >
+			13 pages / 3575 words			</option>
+						<option value = "14"  >
+			14 pages / 3850 words			</option>
+						<option value = "15"  >
+			15 pages / 4125 words			</option>
+						<option value = "16"  >
+			16 pages / 4400 words			</option>
+						<option value = "17"  >
+			17 pages / 4675 words			</option>
+						<option value = "18"  >
+			18 pages / 4950 words			</option>
+						<option value = "19"  >
+			19 pages / 5225 words			</option>
+						<option value = "20"  >
+			20 pages / 5500 words			</option>
+						<option value = "21"  >
+			21 pages / 5775 words			</option>
+						<option value = "22"  >
+			22 pages / 6050 words			</option>
+						<option value = "23"  >
+			23 pages / 6325 words			</option>
+						<option value = "24"  >
+			24 pages / 6600 words			</option>
+						<option value = "25"  >
+			25 pages / 6875 words			</option>
+						<option value = "26"  >
+			26 pages / 7150 words			</option>
+						<option value = "27"  >
+			27 pages / 7425 words			</option>
+						<option value = "28"  >
+			28 pages / 7700 words			</option>
+						<option value = "29"  >
+			29 pages / 7975 words			</option>
+						<option value = "30"  >
+			30 pages / 8250 words			</option>
+						<option value = "31"  >
+			31 pages / 8525 words			</option>
+						<option value = "32"  >
+			32 pages / 8800 words			</option>
+						<option value = "33"  >
+			33 pages / 9075 words			</option>
+						<option value = "34"  >
+			34 pages / 9350 words			</option>
+						<option value = "35"  >
+			35 pages / 9625 words			</option>
+						<option value = "36"  >
+			36 pages / 9900 words			</option>
+						<option value = "37"  >
+			37 pages / 10175 words			</option>
+						<option value = "38"  >
+			38 pages / 10450 words			</option>
+						<option value = "39"  >
+			39 pages / 10725 words			</option>
+						<option value = "40"  >
+			40 pages / 11000 words			</option>
+						<option value = "41"  >
+			41 pages / 11275 words			</option>
+						<option value = "42"  >
+			42 pages / 11550 words			</option>
+						<option value = "43"  >
+			43 pages / 11825 words			</option>
+						<option value = "44"  >
+			44 pages / 12100 words			</option>
+						<option value = "45"  >
+			45 pages / 12375 words			</option>
+						<option value = "46"  >
+			46 pages / 12650 words			</option>
+						<option value = "47"  >
+			47 pages / 12925 words			</option>
+						<option value = "48"  >
+			48 pages / 13200 words			</option>
+						<option value = "49"  >
+			49 pages / 13475 words			</option>
+						<option value = "50"  >
+			50 pages / 13750 words			</option>
+						<option value = "51"  >
+			51 pages / 14025 words			</option>
+						<option value = "52"  >
+			52 pages / 14300 words			</option>
+						<option value = "53"  >
+			53 pages / 14575 words			</option>
+						<option value = "54"  >
+			54 pages / 14850 words			</option>
+						<option value = "55"  >
+			55 pages / 15125 words			</option>
+						<option value = "56"  >
+			56 pages / 15400 words			</option>
+						<option value = "57"  >
+			57 pages / 15675 words			</option>
+						<option value = "58"  >
+			58 pages / 15950 words			</option>
+						<option value = "59"  >
+			59 pages / 16225 words			</option>
+						<option value = "60"  >
+			60 pages / 16500 words			</option>
+						<option value = "61"  >
+			61 pages / 16775 words			</option>
+						<option value = "62"  >
+			62 pages / 17050 words			</option>
+						<option value = "63"  >
+			63 pages / 17325 words			</option>
+						<option value = "64"  >
+			64 pages / 17600 words			</option>
+						<option value = "65"  >
+			65 pages / 17875 words			</option>
+						<option value = "66"  >
+			66 pages / 18150 words			</option>
+						<option value = "67"  >
+			67 pages / 18425 words			</option>
+						<option value = "68"  >
+			68 pages / 18700 words			</option>
+						<option value = "69"  >
+			69 pages / 18975 words			</option>
+						<option value = "70"  >
+			70 pages / 19250 words			</option>
+						<option value = "71"  >
+			71 pages / 19525 words			</option>
+						<option value = "72"  >
+			72 pages / 19800 words			</option>
+						<option value = "73"  >
+			73 pages / 20075 words			</option>
+						<option value = "74"  >
+			74 pages / 20350 words			</option>
+						<option value = "75"  >
+			75 pages / 20625 words			</option>
+						<option value = "76"  >
+			76 pages / 20900 words			</option>
+						<option value = "77"  >
+			77 pages / 21175 words			</option>
+						<option value = "78"  >
+			78 pages / 21450 words			</option>
+						<option value = "79"  >
+			79 pages / 21725 words			</option>
+						<option value = "80"  >
+			80 pages / 22000 words			</option>
+						<option value = "81"  >
+			81 pages / 22275 words			</option>
+						<option value = "82"  >
+			82 pages / 22550 words			</option>
+						<option value = "83"  >
+			83 pages / 22825 words			</option>
+						<option value = "84"  >
+			84 pages / 23100 words			</option>
+						<option value = "85"  >
+			85 pages / 23375 words			</option>
+						<option value = "86"  >
+			86 pages / 23650 words			</option>
+						<option value = "87"  >
+			87 pages / 23925 words			</option>
+						<option value = "88"  >
+			88 pages / 24200 words			</option>
+						<option value = "89"  >
+			89 pages / 24475 words			</option>
+						<option value = "90"  >
+			90 pages / 24750 words			</option>
+						<option value = "91"  >
+			91 pages / 25025 words			</option>
+						<option value = "92"  >
+			92 pages / 25300 words			</option>
+						<option value = "93"  >
+			93 pages / 25575 words			</option>
+						<option value = "94"  >
+			94 pages / 25850 words			</option>
+						<option value = "95"  >
+			95 pages / 26125 words			</option>
+						<option value = "96"  >
+			96 pages / 26400 words			</option>
+						<option value = "97"  >
+			97 pages / 26675 words			</option>
+						<option value = "98"  >
+			98 pages / 26950 words			</option>
+						<option value = "99"  >
+			99 pages / 27225 words			</option>
+						<option value = "100"  >
+			100 pages / 27500 words			</option>
+						<option value = "101"  >
+			101 pages / 27775 words			</option>
+						<option value = "102"  >
+			102 pages / 28050 words			</option>
+						<option value = "103"  >
+			103 pages / 28325 words			</option>
+						<option value = "104"  >
+			104 pages / 28600 words			</option>
+						<option value = "105"  >
+			105 pages / 28875 words			</option>
+						<option value = "106"  >
+			106 pages / 29150 words			</option>
+						<option value = "107"  >
+			107 pages / 29425 words			</option>
+						<option value = "108"  >
+			108 pages / 29700 words			</option>
+						<option value = "109"  >
+			109 pages / 29975 words			</option>
+						<option value = "110"  >
+			110 pages / 30250 words			</option>
+						<option value = "111"  >
+			111 pages / 30525 words			</option>
+						<option value = "112"  >
+			112 pages / 30800 words			</option>
+						<option value = "113"  >
+			113 pages / 31075 words			</option>
+						<option value = "114"  >
+			114 pages / 31350 words			</option>
+						<option value = "115"  >
+			115 pages / 31625 words			</option>
+						<option value = "116"  >
+			116 pages / 31900 words			</option>
+						<option value = "117"  >
+			117 pages / 32175 words			</option>
+						<option value = "118"  >
+			118 pages / 32450 words			</option>
+						<option value = "119"  >
+			119 pages / 32725 words			</option>
+						<option value = "120"  >
+			120 pages / 33000 words			</option>
+						<option value = "121"  >
+			121 pages / 33275 words			</option>
+						<option value = "122"  >
+			122 pages / 33550 words			</option>
+						<option value = "123"  >
+			123 pages / 33825 words			</option>
+						<option value = "124"  >
+			124 pages / 34100 words			</option>
+						<option value = "125"  >
+			125 pages / 34375 words			</option>
+						<option value = "126"  >
+			126 pages / 34650 words			</option>
+						<option value = "127"  >
+			127 pages / 34925 words			</option>
+						<option value = "128"  >
+			128 pages / 35200 words			</option>
+						<option value = "129"  >
+			129 pages / 35475 words			</option>
+						<option value = "130"  >
+			130 pages / 35750 words			</option>
+						<option value = "131"  >
+			131 pages / 36025 words			</option>
+						<option value = "132"  >
+			132 pages / 36300 words			</option>
+						<option value = "133"  >
+			133 pages / 36575 words			</option>
+						<option value = "134"  >
+			134 pages / 36850 words			</option>
+						<option value = "135"  >
+			135 pages / 37125 words			</option>
+						<option value = "136"  >
+			136 pages / 37400 words			</option>
+						<option value = "137"  >
+			137 pages / 37675 words			</option>
+						<option value = "138"  >
+			138 pages / 37950 words			</option>
+						<option value = "139"  >
+			139 pages / 38225 words			</option>
+						<option value = "140"  >
+			140 pages / 38500 words			</option>
+						<option value = "141"  >
+			141 pages / 38775 words			</option>
+						<option value = "142"  >
+			142 pages / 39050 words			</option>
+						<option value = "143"  >
+			143 pages / 39325 words			</option>
+						<option value = "144"  >
+			144 pages / 39600 words			</option>
+						<option value = "145"  >
+			145 pages / 39875 words			</option>
+						<option value = "146"  >
+			146 pages / 40150 words			</option>
+						<option value = "147"  >
+			147 pages / 40425 words			</option>
+						<option value = "148"  >
+			148 pages / 40700 words			</option>
+						<option value = "149"  >
+			149 pages / 40975 words			</option>
+						<option value = "150"  >
+			150 pages / 41250 words			</option>
+						<option value = "151"  >
+			151 pages / 41525 words			</option>
+						<option value = "152"  >
+			152 pages / 41800 words			</option>
+						<option value = "153"  >
+			153 pages / 42075 words			</option>
+						<option value = "154"  >
+			154 pages / 42350 words			</option>
+						<option value = "155"  >
+			155 pages / 42625 words			</option>
+						<option value = "156"  >
+			156 pages / 42900 words			</option>
+						<option value = "157"  >
+			157 pages / 43175 words			</option>
+						<option value = "158"  >
+			158 pages / 43450 words			</option>
+						<option value = "159"  >
+			159 pages / 43725 words			</option>
+						<option value = "160"  >
+			160 pages / 44000 words			</option>
+						<option value = "161"  >
+			161 pages / 44275 words			</option>
+						<option value = "162"  >
+			162 pages / 44550 words			</option>
+						<option value = "163"  >
+			163 pages / 44825 words			</option>
+						<option value = "164"  >
+			164 pages / 45100 words			</option>
+						<option value = "165"  >
+			165 pages / 45375 words			</option>
+						<option value = "166"  >
+			166 pages / 45650 words			</option>
+						<option value = "167"  >
+			167 pages / 45925 words			</option>
+						<option value = "168"  >
+			168 pages / 46200 words			</option>
+						<option value = "169"  >
+			169 pages / 46475 words			</option>
+						<option value = "170"  >
+			170 pages / 46750 words			</option>
+						<option value = "171"  >
+			171 pages / 47025 words			</option>
+						<option value = "172"  >
+			172 pages / 47300 words			</option>
+						<option value = "173"  >
+			173 pages / 47575 words			</option>
+						<option value = "174"  >
+			174 pages / 47850 words			</option>
+						<option value = "175"  >
+			175 pages / 48125 words			</option>
+						<option value = "176"  >
+			176 pages / 48400 words			</option>
+						<option value = "177"  >
+			177 pages / 48675 words			</option>
+						<option value = "178"  >
+			178 pages / 48950 words			</option>
+						<option value = "179"  >
+			179 pages / 49225 words			</option>
+						<option value = "180"  >
+			180 pages / 49500 words			</option>
+						<option value = "181"  >
+			181 pages / 49775 words			</option>
+						<option value = "182"  >
+			182 pages / 50050 words			</option>
+						<option value = "183"  >
+			183 pages / 50325 words			</option>
+						<option value = "184"  >
+			184 pages / 50600 words			</option>
+						<option value = "185"  >
+			185 pages / 50875 words			</option>
+						<option value = "186"  >
+			186 pages / 51150 words			</option>
+						<option value = "187"  >
+			187 pages / 51425 words			</option>
+						<option value = "188"  >
+			188 pages / 51700 words			</option>
+						<option value = "189"  >
+			189 pages / 51975 words			</option>
+						<option value = "190"  >
+			190 pages / 52250 words			</option>
+						<option value = "191"  >
+			191 pages / 52525 words			</option>
+						<option value = "192"  >
+			192 pages / 52800 words			</option>
+						<option value = "193"  >
+			193 pages / 53075 words			</option>
+						<option value = "194"  >
+			194 pages / 53350 words			</option>
+						<option value = "195"  >
+			195 pages / 53625 words			</option>
+						<option value = "196"  >
+			196 pages / 53900 words			</option>
+						<option value = "197"  >
+			197 pages / 54175 words			</option>
+						<option value = "198"  >
+			198 pages / 54450 words			</option>
+						<option value = "199"  >
+			199 pages / 54725 words			</option>
+						<option value = "200"  >
+			200 pages / 55000 words			</option>
+									</select></span>
+                        <!-- deadline -->
+                        <span class="gray8 colored-hover slow" data-toggle="tooltip" data-trigger="hover" data-placement="top"
+                        title="Select Urgency"><select name="deadline" id="deadline" required class="classic_form radius"  onchange="doUpdatePrices();return false">
+						            <option value = "1"  >
+                4 hours            </option>
+                        <option value = "2"  >
+                6 hours            </option>
+                        <option value = "3"  >
+                8 hours            </option>
+                        <option value = "4"  >
+                12 hours            </option>
+                        <option value = "5" selected >
+                24 hours            </option>
+                        <option value = "6"  >
+                48 hours            </option>
+                        <option value = "7"  >
+                3 days            </option>
+                        <option value = "8"  >
+                5 days            </option>
+                        <option value = "11"  >
+                7 days            </option>
+                        <option value = "14"  >
+                10 days            </option>
+                        <option value = "15"  >
+                15 days            </option>
+                        <option value = "16"  >
+                20 days            </option>
+                        <option value = "17"  >
+                30 days            </option>
+            						</select></span>
+                    </div>
+                    <!-- acadlevel -->
+                    <span class="gray8 colored-hover slow" data-toggle="tooltip" data-trigger="hover" data-placement="top"
+                        title="Select Academic Level"><select name="acadlevel" id="acadlevel" required class="classic_form radius"  onchange="doUpdatePrices();return false">
+						            <option value = "1"  >
+                High School            </option>
+                        <option value = "2"  >
+                College            </option>
+                        <option value = "3" selected >
+                Undergraduate            </option>
+                        <option value = "4"  >
+                Master            </option>
+                        <option value = "5"  >
+                Ph. D.            </option>
+            						</select></span>
+						<input type="hidden" id="final-amount2" name="amount" value="108.00" />
+						<center><strong><h2 id="final-amount">$ 54.00</h2></strong></center>
+                    
+                    <!-- Send Button -->
+                    <button type="submit" id="submit" class="lg-btn semibold gray7 colored-hover bg-white slow radius-lg xxs-mt inline-block font-12 qdr-hover-4 bs-hover">CONTINUE</button>
+                </form>
+				</center>
+                <!-- End Form -->
+				<br>
+            </div>
+            <!-- end container -->
+        </section>
+        <!-- END HOME -->
+
+
+
+
+
+
+        <!-- ABOUT -->
+        <section id="about" class="about pb bb-1 border-gray border-solid">
+            <!-- Slider -->
+            <div class="slider-for-boxes no-px container calculate-height custom-slider qdr-controls c-move" data-slick='{"dots": false, "arrows": false, "fade": false, "draggable":true, "slidesToShow": 3, "slidesToScroll": 1, "responsive":[{"breakpoint": 1200,"settings":{"slidesToShow": 2}}, {"breakpoint": 800,"settings":{"slidesToShow": 1}}] }'>
+
+                <!-- Item -->
+                <div class="box">
+                    <div class="box-icon fa fa-wpexplorer"></div>
+                    <h2 class="box-title">Quality</h2>
+                    <p class="box-description">We are a company that provides quality academic writing help to students from undergraduate level to PHD level. </p>
+                </div>
+
+                <!-- Item -->
+                <div class="box">
+                    <div class="box-icon fa fa-linode"></div>
+                    <h2 class="box-title">Direct Assistance</h2>
+                    <p class="box-description">We put students directly in touch with our talented writers to ensure their involvement in the writing process before, during and after.  </p>
+                </div>
+
+                <!-- Item -->
+                <div class="box">
+                    <div class="box-icon fa fa-support"></div>
+                    <h2 class="box-title">Affordable prices</h2>
+                    <p class="box-description">We offer affordable prices and discounts geared towards students’ budget. For every referral our clients get 2 pages done for free.  </p>
+                </div>
+
+                <!-- Item -->
+                <div class="box">
+                    <div class="box-icon fa fa-diamond"></div>
+                    <h2 class="box-title">Prompt On-Time delivery </h2>
+                    <p class="box-description">Timely submission of your papers is our top priority and we guarantee your data protection and safety.<p>
+                </div>
+
+            </div>
+            <!-- End Slider -->
+        </section>
+        <!-- END ABOUT -->
+
+
+        <!-- ABOUT SECTION -->
+    <section id="about" class="py t-center" style="margin-top: -80px;">
+        <!-- Container for title -->
+        <div class="container">
+            <!-- Title -->
+            <h5 class="uppercase bold gray7">Why chose us</h5>
+            <h2 class="extrabold-title mini-mt">
+                Here at morielessays, our main aim is to <br class="visible-lg">
+              constantly provide <span class="italic playfair">quality papers</span> for our clients!
+            </h2>
+            <a href="#services" class="gray6 h4 playfair italic qdr-hover-5 mini-mt inline-block slow">
+                We pride ourselves on guaranteeing customer satisfaction. 
+            </a>
+            <!-- Strips -->
+            <div class="title-strips-over dark"></div>
+            <!-- Description -->
+            <p class="page-description">
+                Over the years our writers have amassed vast skills and experience to help ensure that all client needs are well met. We pride ourselves on guaranteeing customer satisfaction. Our team of writers and editors work in harmony to ensure that papers produced are original and of the highest quality. Morielessays also understand that students not only want high-quality papers but also want to save some money too. This is the reason why we have made our services more affordable for the students.
+
+            </p>
+        </div>
+        <!-- End Container for title -->
+    </section>
+    <!-- END ABOUT SECTION -->
+
+       
+
+
+    </section>
+    <!-- END ALL SECTIONS -->
+
+
+
+
+    <!-- FOOTER -->
+    <footer id="footer" class="py footer-fixed gray3 font-14 bg-dark t-center">
+
+        <div class="container">
+            <h4 class="playfair italic mini-mb">Online Writers<i class="fa fa-book font-20" data-color="#5467f9"></i></h4>
+            <p class="gray6">©2020 ALL RIGHTS RESERVED. DEVELOPED BY <a href="#" target="_blank" class="white-hover underline-hover">KEV LOCALSAVVY</a></p>
+        </div>
+
+    </footer>
+    <!-- END FOOTER -->
+
+
+
+
+
+     <!-- Quick Contact Form -->
+    <div class="quick-contact-form border-colored">
+        <h5 class="uppercase t-center extrabold">Drop us a message</h5>
+        <p class="t-center normal">You're in the right place! Just drop us a message. How can we help?</p>
+        <!-- Contact Form -->
+        <form class="quick_form" name="quick_form" method="post" action="https://morielessays.com/action_contactus.php">
+            <!-- Name -->
+            <input type="text" name="qname" id="qname" required placeholder="Name" class="no-mt">
+            <!-- Email -->
+            <input type="email" name="qemail" id="qemail" required placeholder="E-Mail">
+            <!-- Message -->
+            <textarea name="qmessage" id="qmessage" required placeholder="Message"></textarea>
+            <!-- Send Button -->
+            <button type="submit" id="qsubmit" class="bg-colored white qdr-hover-6 extrabold">SEND</button>
+            <!-- End Send Button -->
+        </form>
+        <!-- End Form -->
+        <a href="#" target="_blank" class="inline-block colored-hover uppercase extrabold h6 no-pm qdr-hover-5">Or see contact page</a>
+    </div>    <!-- Contact us button -->
+    <div class="drop-msg click-effect dark"><i class="fa fa-envelope-o"></i></div>
+    <!-- Back To Top -->
+    <a id="back-to-top" href="#top"><i class="fa fa-angle-up"></i></a>
+
+
+
+
+
+    <!-- SEARCH FORM FOR NAV -->
+    <div class="fs-searchform">
+        <form id="fs-searchform" class="v-center container" action="#" method="get">
+            <!-- Input -->
+            <input type="search" name="q" id="q" placeholder="Search on website.com" autocomplete="off">
+            <!-- Search Button -->
+            <button type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+            <div class="recommended font-14 normal">
+                <h5 class="rcm-title">Recommend Links;</h5>
+                <a href="demo-antares.html">Quadra, Antares version</a>
+                <a href="demo-athena.html">Beautiful Athena demo</a>
+                <a href="elements-all.html">Awesome Quadra Elements</a>
+                <a href="demo-feronia.html">Why i will use the Quadra?</a>
+                <a href="demo-sun.html">Checkout the Sun demo</a>
+                <a href="index-3.html">See 600+ templates</a>
+            </div>
+        </form>
+        <div class="form-bg"></div>
+    </div>    <!-- END SEARCH FORM -->
+
+    <!-- Messages for contact form -->
+    <div id="error_message" class="clearfix">
+        <i class="fa fa-warning"></i>
+        <span>Validation error occured. Please enter the fields and submit it again.</span>
+    </div>
+    <!-- Submit Message -->
+    <div id="submit_message" class="clearfix">
+        <i class="fa fa-check"></i>
+        <span>Thank You ! Your email has been delivered.</span>
+    </div>
+	
+	
+
+
+	<!-- jQuery -->
+    <script src="js/jquery.min2d4c2d4c.js?v=2.3"></script>
+    <!-- PAGE OPTIONS - You can find special scripts for this version -->
+    <script src="content/unfold/js/plugins.js"></script>
+    <!-- MAIN SCRIPTS - Classic scripts for all theme -->
+    <script src="js/scripts73177317.js?v=2.3.1"></script>
+    <!-- END JS FILES -->
+	
+	<script>
+	jQuery(document).ready(function(){
+				doUpdatePrices();
+	)}
+	</script>
+
+</body>
+<!-- Body End -->
+
+
+
